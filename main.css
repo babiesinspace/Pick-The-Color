@@ -1,5 +1,6 @@
 body {
   background-color: #666666;
+  text-align: center;
 }
 
 #container {
@@ -13,4 +14,8 @@ body {
   padding-bottom: 30%;
   margin: 1.66%;
   float: left;
+}
+
+h1 {
+  color: white;
 }
