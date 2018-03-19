@@ -71,10 +71,17 @@ reset.addEventListener("click", function(){
 })
 
 easy.addEventListener("click", function(){
-
   easy.classList.toggle("selected")
   hard.classList.toggle("selected")
   row2.classList.toggle("hidden")
+  gameStart();
+})
+
+hard.addEventListener("click", function(){
+  easy.classList.toggle("selected")
+  hard.classList.toggle("selected")
+  row2.classList.toggle("hidden")
+  gameStart();
 })
 
 //start the game on load
