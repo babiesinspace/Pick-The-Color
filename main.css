@@ -10,12 +10,18 @@ body {
 
 .squares {
   width: 30%;
-  background-color: purple;
   padding-bottom: 30%;
   margin: 1.66%;
   float: left;
 }
 
-h1, span {
+h1 {
   color: white;
+}
+
+#header {
+  background: white;
+  height: 30px;
+  text-align: center;
+  color: black;
 }
