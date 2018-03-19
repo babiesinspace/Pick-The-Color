@@ -16,6 +16,6 @@ body {
   float: left;
 }
 
-h1 {
+h1, span {
   color: white;
 }

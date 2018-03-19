@@ -9,6 +9,8 @@ function randomColor(){
 }
 
 let squares = document.getElementsByClassName('squares')
+let gradeGuess = document.getElementById("guess")
+
 
 for (var i = 0; i < squares.length; i++) {
   //assign random color
@@ -17,10 +19,13 @@ for (var i = 0; i < squares.length; i++) {
   //add event listener on each square
   //check to see if color is the selected color
   squares[i].addEventListener("click", function(){
-    if (this.style.backgroundColor === presentColor.innerText) {
-      alert("Correct!")
+    let correctSquareColor = this.style.backgroundColor
+    if (correctSquareColor === presentColor.innerText) {
+      gradeGuess.innerText = "Correct!"
+      winningColor(correctSquareColor)
     } else {
-      alert("Nope!")
+      gradeGuess.innerText = "WRONG"
+      this.style.backgroundColor = "#666666"
     }
   })
 }
@@ -30,6 +35,12 @@ let selectColor = squares[Math.floor(Math.random() * squares.length)].style.back
 let presentColor = document.getElementById("rgb")
 
 presentColor.innerText = selectColor
+
+function winningColor(color) {
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = color
+  }
+}
 
 // function shuffleArray(array) {
 //   for (let i = array.length - 1; i > 0; i--) {
