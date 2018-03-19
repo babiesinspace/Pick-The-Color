@@ -3,6 +3,9 @@ let gradeGuess = document.getElementById("guess")
 let head = document.querySelector("h1")
 let reset = document.getElementById("reset")
 let presentColor = document.getElementById("rgb")
+let easy = document.getElementById("easy")
+let hard = document.getElementById("hard")
+let row2 = document.getElementById("row2")
 
 
 //select a number btw 0-250
@@ -16,8 +19,8 @@ function randomColor(){
 }
 
 //out of the colors generated, select the random one to guess
-function selectColor(){ 
-  return squares[Math.floor(Math.random() * squares.length)].style.backgroundColor
+function selectColor(){
+  return easy.classList.contains("selected") ? squares[Math.floor(Math.random() * 3)].style.backgroundColor : squares[Math.floor(Math.random() * 6)].style.backgroundColor
 }
 
 //change all squares to winning color
@@ -32,11 +35,14 @@ function showColorString(){
   presentColor.innerText = selectColor();
 }
 
+//generate random colors
+function generateColors(square){
+    square.style.backgroundColor = randomColor();
+}
 //initialize color board and judge
 function gameStart(){
   for (var i = 0; i < squares.length; i++) {
-    //assign random color
-    squares[i].style.backgroundColor = randomColor();
+    generateColors(squares[i])
     selectColor()
     showColorString();
 
@@ -64,6 +70,12 @@ reset.addEventListener("click", function(){
   gameStart();
 })
 
+easy.addEventListener("click", function(){
+
+  easy.classList.toggle("selected")
+  hard.classList.toggle("selected")
+  row2.classList.toggle("hidden")
+})
 
 //start the game on load
 gameStart();

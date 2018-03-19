@@ -29,3 +29,7 @@ h1 {
 .selected {
   background-color: blue;
 }
+
+.hidden {
+  display: none;
+}
