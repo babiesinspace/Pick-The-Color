@@ -1,0 +1,16 @@
+body {
+  background-color: #666666;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.squares {
+  width: 30%;
+  background-color: purple;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  float: left;
+}
