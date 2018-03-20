@@ -6,6 +6,7 @@ let presentColor = document.getElementById("rgb")
 let easy = document.getElementById("easy")
 let hard = document.getElementById("hard")
 let row2 = document.getElementById("row2")
+let difficultyButtons = document.querySelectorAll(".difficulty")
 
 
 //select a number btw 0-250
@@ -70,20 +71,16 @@ reset.addEventListener("click", function(){
   gameStart();
 })
 
-easy.addEventListener("click", function(){
-  easy.classList.toggle("selected")
-  hard.classList.toggle("selected")
-  row2.classList.toggle("hidden")
-  gameStart();
-})
 
-hard.addEventListener("click", function(){
-  easy.classList.toggle("selected")
-  hard.classList.toggle("selected")
-  row2.classList.toggle("hidden")
-  gameStart();
+//add event listeners on all difficulty buttons 
+for (var i = 0; i < difficultyButtons.length; i++) {
+  difficultyButtons[i].addEventListener("click", function(){
+    easy.classList.toggle("selected")
+    hard.classList.toggle("selected")
+    row2.classList.toggle("hidden")
+    gameStart();
 })
-
+}
 //start the game on load
 gameStart();
 
